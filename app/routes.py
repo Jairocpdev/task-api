@@ -4,7 +4,12 @@ from sqlalchemy.orm import Session
 from app import crud, schemas
 from app.database import SessionLocal
 
-router = APIRouter()
+
+
+router = APIRouter(
+    prefix="",
+    tags=["Tasks"]
+)
 
 
 def get_db():
@@ -12,15 +17,12 @@ def get_db():
     try: yield db
     finally: db.close()
 
-@router.get("/tasks", summary="Listar tarefas", description="Retorna todas as tarefas cadastradas.")
-
-@router.get("/tasks", response_model=list[schemas.TaskResponse])
-def get_tasks(db: Session = Depends(get_db)):
-    return crud.get_tasks(db)
-
-@router.get("/tasks/{task_id}", 
-            response_model=schemas.TaskResponse)
-
+@router.get(
+    "/tasks/{task_id}",
+    response_model=schemas.TaskResponse,
+    summary="Buscar tarefa",
+    description="Busca uma tarefa pelo seu ID."
+)
 def get_task(task_id: int, db: Session = Depends(get_db)):
     task = crud.get_task(db, task_id)
 
@@ -38,7 +40,13 @@ def get_task(task_id: int, db: Session = Depends(get_db)):
 def create_task(task: schemas.TaskCreate, db: Session = Depends(get_db)):
     return crud.create_task(db, task)
 
-@router.put("/tasks/{task_id}", response_model=schemas.TaskResponse)
+@router.put(
+    "/tasks/{task_id}",
+    response_model=schemas.TaskResponse,
+    summary="Atualizar tarefa",
+    description="Atualiza os dados de uma tarefa existente."
+)
+
 def update_task(
     task_id: int,
     task: schemas.TaskCreate,
@@ -54,7 +62,13 @@ def update_task(
 
     return updated_task
 
-@router.delete("/tasks/{task_id}", response_model=schemas.TaskResponse)
+@router.delete(
+    "/tasks/{task_id}",
+    response_model=schemas.TaskResponse,
+    summary="Excluir tarefa",
+    description="Remove uma tarefa do banco de dados."
+)
+
 def delete_task(task_id: int, db: Session = Depends(get_db)):
     deleted_task = crud.delete_task(db, task_id)
 
@@ -65,3 +79,4 @@ def delete_task(task_id: int, db: Session = Depends(get_db)):
         )
 
     return deleted_task
+

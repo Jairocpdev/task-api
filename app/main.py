@@ -8,7 +8,6 @@ from app.routes import router
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI (
-
     title="Task API",
     description="API de gerenciamento de tarefas",
     version="1.0.0"
@@ -16,6 +15,11 @@ app = FastAPI (
 
 app.include_router(router)
 
-@app.get("/")
+@app.get(
+    "/",
+    tags=["Sistema"],
+    summary="Página inicial"
+)
+
 def home():
     return {"mensagem": "Bem-vindo à Task API!"}
