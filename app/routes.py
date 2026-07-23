@@ -4,8 +4,6 @@ from sqlalchemy.orm import Session
 from app import crud, schemas
 from app.database import SessionLocal
 
-
-
 router = APIRouter(
     prefix="",
     tags=["Tasks"]
@@ -22,6 +20,7 @@ def get_db():
     response_model=schemas.TaskResponse,
     summary="Buscar tarefa",
     description="Busca uma tarefa pelo seu ID."
+
 )
 def get_task(task_id: int, db: Session = Depends(get_db)):
     task = crud.get_task(db, task_id)
@@ -79,4 +78,3 @@ def delete_task(task_id: int, db: Session = Depends(get_db)):
         )
 
     return deleted_task
-
