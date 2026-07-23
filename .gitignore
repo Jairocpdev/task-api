@@ -1,0 +1,20 @@
+# Ambiente virtual
+venv/
+
+# Cache do Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Banco SQLite
+*.db
+
+# Variáveis de ambiente
+.env
+
+# Configurações do VS Code
+.vscode/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
