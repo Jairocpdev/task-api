@@ -12,15 +12,27 @@ router = APIRouter(
 
 def get_db():
     db = SessionLocal()
-    try: yield db
-    finally: db.close()
+    try:
+        yield db
+    finally:
+        db.close()
+
+
+@router.get(
+    "/tasks",
+    response_model=list[schemas.TaskResponse],
+    summary="Listar tarefas",
+    description="Retorna todas as tarefas cadastradas."
+)
+def get_tasks(db: Session = Depends(get_db)):
+    return crud.get_tasks(db)
+
 
 @router.get(
     "/tasks/{task_id}",
     response_model=schemas.TaskResponse,
     summary="Buscar tarefa",
     description="Busca uma tarefa pelo seu ID."
-
 )
 def get_task(task_id: int, db: Session = Depends(get_db)):
     task = crud.get_task(db, task_id)
@@ -33,11 +45,16 @@ def get_task(task_id: int, db: Session = Depends(get_db)):
 
     return task
 
-@router.post("/tasks", 
-             summary="Criar tarefa", 
-             description="Cria uma nova tarefa no banco de dados.")
+
+@router.post(
+    "/tasks",
+    response_model=schemas.TaskResponse,
+    summary="Criar tarefa",
+    description="Cria uma nova tarefa no banco de dados."
+)
 def create_task(task: schemas.TaskCreate, db: Session = Depends(get_db)):
     return crud.create_task(db, task)
+
 
 @router.put(
     "/tasks/{task_id}",
@@ -45,7 +62,6 @@ def create_task(task: schemas.TaskCreate, db: Session = Depends(get_db)):
     summary="Atualizar tarefa",
     description="Atualiza os dados de uma tarefa existente."
 )
-
 def update_task(
     task_id: int,
     task: schemas.TaskCreate,
@@ -61,13 +77,13 @@ def update_task(
 
     return updated_task
 
+
 @router.delete(
     "/tasks/{task_id}",
     response_model=schemas.TaskResponse,
     summary="Excluir tarefa",
     description="Remove uma tarefa do banco de dados."
 )
-
 def delete_task(task_id: int, db: Session = Depends(get_db)):
     deleted_task = crud.delete_task(db, task_id)
 

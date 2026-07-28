@@ -1,0 +1,40 @@
+<mat-card>
+
+    <mat-card-title>
+
+        {{task.titulo}}
+
+    </mat-card-title>
+
+    <mat-card-content>
+
+        <p>
+
+            {{task.descricao}}
+
+        </p>
+
+        <span class="status" [class.done]="task.concluida">
+
+            {{task.concluida?'Concluída':'Pendente'}}
+
+        </span>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+
+        <button mat-flat-button color="primary" [routerLink]="['/edit', task.id]">
+
+            Editar
+
+        </button>
+        <button mat-flat-button color="warn">
+
+            Excluir
+
+        </button>
+
+    </mat-card-actions>
+
+</mat-card>

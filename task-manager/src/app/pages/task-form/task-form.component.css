@@ -1,0 +1,15 @@
+form{
+    max-width:700px;
+    margin:40px auto;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+mat-form-field{
+    width:100%;
+}
+
+button{
+    width:180px;
+}

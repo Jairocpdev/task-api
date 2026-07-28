@@ -1,0 +1,61 @@
+<div class="dashboard">
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <h3>Total</h3>
+
+            <span>{{ totalTasks }}</span>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>Concluídas</h3>
+
+            <span>{{ completedTasks }}</span>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>Pendentes</h3>
+
+            <span>{{ pendingTasks }}</span>
+
+        </div>
+
+    </section>
+
+    <div
+        *ngIf="loading"
+        class="loading">
+
+        <mat-spinner></mat-spinner>
+
+    </div>
+
+    <div
+        *ngIf="!loading && tasks.length===0"
+        class="empty">
+
+        Nenhuma tarefa cadastrada.
+
+    </div>
+
+    <section
+        *ngIf="!loading"
+        class="grid">
+
+        <app-task-card
+
+            *ngFor="let task of tasks"
+
+            [task]="task">
+
+        </app-task-card>
+
+    </section>
+
+</div>

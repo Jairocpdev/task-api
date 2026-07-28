@@ -1,0 +1,46 @@
+<form [formGroup]="form" (ngSubmit)="save()">
+
+  <mat-form-field appearance="outline">
+
+    <mat-label>Título</mat-label>
+
+    <input
+      matInput
+      formControlName="titulo"
+      placeholder="Digite o título"
+      aria-label="Título da tarefa">
+
+    <mat-error *ngIf="form.controls.titulo.invalid">
+      O título é obrigatório.
+    </mat-error>
+
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+
+    <mat-label>Descrição</mat-label>
+
+    <textarea
+      matInput
+      rows="5"
+      formControlName="descricao"
+      placeholder="Digite a descrição"
+      aria-label="Descrição da tarefa">
+    </textarea>
+
+  </mat-form-field>
+
+  <mat-checkbox formControlName="concluida">
+    Concluída
+  </mat-checkbox>
+
+  <button
+    mat-flat-button
+    color="primary"
+    type="submit">
+
+    Salvar
+
+  </button>
+
+</form>

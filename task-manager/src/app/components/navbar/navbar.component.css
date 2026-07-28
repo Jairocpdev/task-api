@@ -1,0 +1,31 @@
+nav{
+height:70px;
+background:#1976d2;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 40px;
+color:white;
+box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+nav h2{
+font-size:26px;
+font-weight:700;
+}
+
+nav div{
+display:flex;
+gap:20px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.2s;
+}
+
+nav a:hover{
+opacity:.7;
+}
