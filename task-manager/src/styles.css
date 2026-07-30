@@ -1,15 +1,46 @@
-html, body {
-    height:100%;
+html,
+body {
+    height: 100%;
+    margin: 0;
 }
 
 body {
-    margin:0;
-    font-family:'Inter',sans-serif;
-    background:#f4f6f9;
+    background: #f4f7fb;
+    font-family: 'Inter', Roboto, "Helvetica Neue", sans-serif;
 }
 
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Angular Material */
+
+.mat-mdc-input-element {
+    color: #111827 !important;
+}
+
+.mat-mdc-input-element::placeholder {
+    color: #6b7280 !important;
+    opacity: 1 !important;
+}
+
+.mdc-text-field__input::placeholder {
+    color: #6b7280 !important;
+    opacity: 1 !important;
+}
+
+.mdc-floating-label {
+    color: #374151 !important;
+}
+
+.mdc-label {
+    color: #374151 !important;
+}
+
+textarea.mat-mdc-input-element {
+    color: #111827 !important;
+}
+
+:root {
+    color-scheme: light;
+}

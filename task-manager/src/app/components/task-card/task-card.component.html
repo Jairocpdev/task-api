@@ -1,40 +1,52 @@
 <mat-card>
 
-    <mat-card-title>
+  <mat-card-title>
+    {{ task.titulo }}
+  </mat-card-title>
 
-        {{task.titulo}}
+  <mat-card-content>
 
-    </mat-card-title>
+    <p>{{ task.descricao }}</p>
 
-    <mat-card-content>
+    <span
+      class="status"
+      [class.done]="task.concluida">
 
-        <p>
+      {{ task.concluida ? 'Concluída' : 'Pendente' }}
 
-            {{task.descricao}}
+    </span>
 
-        </p>
+  </mat-card-content>
 
-        <span class="status" [class.done]="task.concluida">
+  <mat-card-actions>
 
-            {{task.concluida?'Concluída':'Pendente'}}
+    <button
+  mat-flat-button
+  color="accent"
+  (click)="toggleStatus()">
 
-        </span>
+  {{ task.concluida ? 'Reabrir' : 'Concluir' }}
 
-    </mat-card-content>
+</button>
 
-    <mat-card-actions>
+    <button
+      mat-flat-button
+      color="primary"
+      [routerLink]="['/edit', task.id]">
 
-        <button mat-flat-button color="primary" [routerLink]="['/edit', task.id]">
+      Editar
 
-            Editar
+    </button>
 
-        </button>
-        <button mat-flat-button color="warn">
+    <button
+      mat-flat-button
+      color="warn"
+      (click)="deleteTask()">
 
-            Excluir
+      Excluir
 
-        </button>
+    </button>
 
-    </mat-card-actions>
+  </mat-card-actions>
 
 </mat-card>

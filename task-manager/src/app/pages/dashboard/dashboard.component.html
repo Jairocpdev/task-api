@@ -28,32 +28,22 @@
 
     </section>
 
-    <div
-        *ngIf="loading"
-        class="loading">
+    <div *ngIf="loading" class="loading">
 
         <mat-spinner></mat-spinner>
 
     </div>
 
-    <div
-        *ngIf="!loading && tasks.length===0"
-        class="empty">
+    <div *ngIf="!loading && tasks.length===0" class="empty">
 
         Nenhuma tarefa cadastrada.
 
     </div>
 
-    <section
-        *ngIf="!loading"
-        class="grid">
+    <section *ngIf="!loading" class="grid">
 
-        <app-task-card
-
-            *ngFor="let task of tasks"
-
-            [task]="task">
-
+        <app-task-card *ngFor="let task of tasks" [task]="task" (delete)="deleteTask($event)"
+            (toggle)="toggleStatus($event)">
         </app-task-card>
 
     </section>

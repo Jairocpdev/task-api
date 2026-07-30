@@ -49,4 +49,16 @@ export class TaskService {
     console.error(error);
     return throwError(() => error);
   }
+
+  toggleStatus(task: Task) {
+
+  const updated = {
+    titulo: task.titulo,
+    descricao: task.descricao,
+    concluida: !task.concluida
+  };
+
+  return this.updateTask(task.id, updated);
+
+}
 }

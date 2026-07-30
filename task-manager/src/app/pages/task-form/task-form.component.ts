@@ -16,6 +16,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { TaskService } from '../../services/task.service';
 import { CreateTask } from '../../models/task';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-task-form',
@@ -27,7 +28,8 @@ import { CreateTask } from '../../models/task';
     MatInputModule,
     MatCheckboxModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule
   ],
   templateUrl: './task-form.component.html',
   styleUrl: './task-form.component.css'

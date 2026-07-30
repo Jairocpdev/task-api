@@ -1,46 +1,52 @@
-<form [formGroup]="form" (ngSubmit)="save()">
+<div class="form-card">
 
-  <mat-form-field appearance="outline">
+  <h2 class="page-title">
+    {{ editing ? 'Editar tarefa' : 'Nova tarefa' }}
+  </h2>
 
-    <mat-label>Título</mat-label>
+  <form [formGroup]="form" (ngSubmit)="save()">
 
-    <input
-      matInput
-      formControlName="titulo"
-      placeholder="Digite o título"
-      aria-label="Título da tarefa">
+    <mat-form-field appearance="outline" floatLabel="always">
 
-    <mat-error *ngIf="form.controls.titulo.invalid">
-      O título é obrigatório.
-    </mat-error>
+      <mat-label>Título</mat-label>
 
-  </mat-form-field>
+      <input
+        matInput
+        formControlName="titulo"
+        aria-label="Título da tarefa">
 
-  <mat-form-field appearance="outline">
+      <mat-error *ngIf="form.controls.titulo.invalid">
+        O título é obrigatório.
+      </mat-error>
 
-    <mat-label>Descrição</mat-label>
+    </mat-form-field>
 
-    <textarea
-      matInput
-      rows="5"
-      formControlName="descricao"
-      placeholder="Digite a descrição"
-      aria-label="Descrição da tarefa">
-    </textarea>
+    <mat-form-field appearance="outline" floatLabel="always">
 
-  </mat-form-field>
+      <mat-label>Descrição</mat-label>
 
-  <mat-checkbox formControlName="concluida">
-    Concluída
-  </mat-checkbox>
+      <textarea
+        matInput
+        rows="5"
+        formControlName="descricao"
+        aria-label="Descrição da tarefa">
+      </textarea>
 
-  <button
-    mat-flat-button
-    color="primary"
-    type="submit">
+    </mat-form-field>
 
-    Salvar
+    <mat-checkbox formControlName="concluida">
+      Concluída
+    </mat-checkbox>
 
-  </button>
+    <button
+      mat-flat-button
+      color="primary"
+      type="submit">
 
-</form>
+      Salvar
+
+    </button>
+
+  </form>
+
+</div>

@@ -1,15 +1,55 @@
-form{
-    max-width:700px;
+.form-card{
+    max-width:900px;
     margin:40px auto;
+    padding:36px;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.page-title{
+    margin:0 0 30px;
+    font-size:32px;
+    font-weight:700;
+    color:#1f2937;
+}
+
+form{
     display:flex;
     flex-direction:column;
-    gap:20px;
+    gap:22px;
 }
 
 mat-form-field{
     width:100%;
 }
 
-button{
+button[type="submit"]{
     width:180px;
+    height:48px;
+    border-radius:28px;
+    font-size:16px;
+    font-weight:600;
+    align-self:flex-start;
+}
+
+mat-checkbox{
+    margin-bottom:12px;
+}
+
+input, textarea{
+    color:#111827 !important;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:#4b5563 !important;
+    opacity:1;
+}
+
+.mat-mdc-form-field .mdc-floating-label{
+    color:#111827 !important;
+}
+
+.mat-mdc-checkbox label{
+    color:#111827 !important;
 }
