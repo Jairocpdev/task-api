@@ -10,7 +10,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { MatDialog } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 import { ConfirmDialogComponent } from '../../components/confirm-dialog/confirm-dialog.component';
+import { MatInputModule } from '@angular/material/input';
+
+import { FormsModule } from '@angular/forms';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,24 +25,47 @@ import { ConfirmDialogComponent } from '../../components/confirm-dialog/confirm-
     TaskCardComponent,
     MatProgressSpinnerModule,
     MatDialogModule,
+    MatIconModule,
+    MatInputModule,
+    FormsModule
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit {
 
+searchTerm = '';
+
+get filteredTasks(): Task[] {
+
+  if (!this.searchTerm.trim()) {
+    return this.tasks;
+  }
+
+  return this.tasks.filter(task =>
+    task.titulo
+      .toLowerCase()
+      .includes(this.searchTerm.toLowerCase())
+  );
+
+}
+
   tasks: Task[] = [];
   loading = true;
 
   constructor(
     private taskService: TaskService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private searchService: SearchService
   ) {}
 
-  ngOnInit(): void {
-    this.loadTasks();
-  }
+ngOnInit(): void {
+  this.loadTasks();
+  this.searchService.search$.subscribe(value => {
+    this.searchTerm = value;
+  });
 
+}
   loadTasks(): void {
 
     this.loading = true;
@@ -69,6 +97,8 @@ export class DashboardComponent implements OnInit {
     return this.tasks.filter(task => !task.concluida).length;
   }
 
+  
+
   deleteTask(id: number): void {
 
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
@@ -93,7 +123,6 @@ export class DashboardComponent implements OnInit {
 
   }
 
-  // ESTE MÉTODO FICA FORA DO deleteTask()
   toggleStatus(task: Task): void {
 
     this.taskService.toggleStatus(task).subscribe({
@@ -110,4 +139,6 @@ export class DashboardComponent implements OnInit {
 
   }
 
+
+  
 }

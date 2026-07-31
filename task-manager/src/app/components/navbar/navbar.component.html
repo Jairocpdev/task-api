@@ -1,13 +1,28 @@
 <nav>
 
-    <h2>Task Manager</h2>
+<div class="brand">
+    <h2>📋 Task Manager</h2>
+    <span>Organize suas tarefas</span>
+</div>
+  <mat-form-field appearance="outline" class="search-navbar">
+    
+    <mat-icon matPrefix>search</mat-icon>
 
-    <div>
+    <input
+      matInput
+      placeholder="Pesquisar tarefas..."
+      [(ngModel)]="searchTerm"
+         (input)="onSearch()"
+    placeholder="Pesquisar tarefas...">
 
-        <a routerLink="/">Home</a>
+  </mat-form-field>
 
-        <a routerLink="/new">Nova tarefa</a>
-
-    </div>
+  <div class="links">
+    <a routerLink="/">Home</a>
+    <a routerLink="/new" class="new-task">
+      <mat-icon>add_task</mat-icon>
+      Nova tarefa
+    </a>
+  </div>
 
 </nav>

@@ -53,3 +53,15 @@ textarea::placeholder{
 .mat-mdc-checkbox label{
     color:#111827 !important;
 }
+
+mat-card-actions button{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+mat-card-actions mat-icon{
+    font-size:20px;
+    width:20px;
+    height:20px;
+}

@@ -18,35 +18,28 @@
 
   </mat-card-content>
 
-  <mat-card-actions>
+<mat-card-actions>
 
-    <button
-  mat-flat-button
-  color="accent"
-  (click)="toggleStatus()">
+  <button
+    mat-flat-button
+    color="primary"
+    [routerLink]="['/edit', task.id]">
 
-  {{ task.concluida ? 'Reabrir' : 'Concluir' }}
+    <mat-icon>edit</mat-icon>
+    Editar
 
-</button>
+  </button>
 
-    <button
-      mat-flat-button
-      color="primary"
-      [routerLink]="['/edit', task.id]">
+  <button
+    mat-flat-button
+    color="warn"
+    (click)="deleteTask()">
 
-      Editar
+    <mat-icon>delete</mat-icon>
+    Excluir
 
-    </button>
+  </button>
 
-    <button
-      mat-flat-button
-      color="warn"
-      (click)="deleteTask()">
-
-      Excluir
-
-    </button>
-
-  </mat-card-actions>
+</mat-card-actions>
 
 </mat-card>

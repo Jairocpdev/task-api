@@ -2,27 +2,49 @@
 
     <section class="stats">
 
-        <div class="stat-card">
+        <div class="stat-card total">
 
-            <h3>Total</h3>
+            
 
-            <span>{{ totalTasks }}</span>
+            <div class="icon">
+                <mat-icon>assignment</mat-icon>
+            </div>
+
+            <div>
+
+                <h3>Total</h3>
+
+                <span>{{ totalTasks }}</span>
+
+            </div>
 
         </div>
 
-        <div class="stat-card">
+        <div class="stat-card success">
 
-            <h3>Concluídas</h3>
+            <div class="icon"> <mat-icon>task_alt</mat-icon> </div>
 
-            <span>{{ completedTasks }}</span>
+            <div>
+
+                <h3>Concluídas</h3>
+
+                <span>{{ completedTasks }}</span>
+
+            </div>
 
         </div>
 
-        <div class="stat-card">
+        <div class="stat-card warning">
 
-            <h3>Pendentes</h3>
+            <div class="icon"><mat-icon>schedule</mat-icon></div>
 
-            <span>{{ pendingTasks }}</span>
+            <div>
+
+                <h3>Pendentes</h3>
+
+                <span>{{ pendingTasks }}</span>
+
+            </div>
 
         </div>
 
@@ -42,7 +64,7 @@
 
     <section *ngIf="!loading" class="grid">
 
-        <app-task-card *ngFor="let task of tasks" [task]="task" (delete)="deleteTask($event)"
+        <app-task-card *ngFor="let task of filteredTasks" [task]="task" (delete)="deleteTask($event)"
             (toggle)="toggleStatus($event)">
         </app-task-card>
 

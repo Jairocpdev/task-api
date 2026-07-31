@@ -13,8 +13,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Angular Material */
-
 .mat-mdc-input-element {
     color: #111827 !important;
 }
@@ -43,4 +41,10 @@ textarea.mat-mdc-input-element {
 
 :root {
     color-scheme: light;
+}
+
+.search .mdc-notched-outline__leading,
+.search .mdc-notched-outline__notch,
+.search .mdc-notched-outline__trailing{
+    border-color:rgba(255,255,255,.35) !important;
 }
