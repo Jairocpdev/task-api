@@ -1,59 +1,123 @@
-# TaskManager
+# 📋 Task Manager
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.8.
+Uma aplicação moderna de gerenciamento de tarefas desenvolvida com **Angular 19**, **Angular Material** e **FastAPI**, permitindo criar, editar, concluir, excluir e pesquisar tarefas em uma interface intuitiva e responsiva.
 
-## Development server
+## 🚀 Deploy
 
-To start a local development server, run:
+🔗 **Aplicação:** https://task-manager-eosin-ten-31.vercel.app
 
-```bash
-ng serve
+📚 **Documentação da API (Swagger):** https://task-api-1-053k.onrender.com/docs
+
+## ✨ Funcionalidades
+
+- ✅ Criar tarefas
+- ✏️ Editar tarefas
+- 🗑️ Excluir tarefas
+- ✔️ Marcar tarefas como concluídas
+- 💬 Confirmação antes da exclusão
+- 📱 Interface responsiva
+- ☁️ Deploy completo (Frontend + Backend)
+- 🔄 Alterar status da tarefa
+- 🔍 Pesquisar tarefas em tempo real
+- 📊 Dashboard com estatísticas:
+
+  - Total de tarefas
+  - Tarefas concluídas
+  - Tarefas pendentes
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+### Front-end
+
+- Angular 19
+- Angular Material
+- TypeScript
+- HTML5
+- CSS3
+- RxJS
+
+### Back-end
+
+- FastAPI
+- Python
+- SQLAlchemy
+- SQLite
+- Uvicorn
+
+### Deploy
+
+- Vercel (Frontend)
+- Render (Backend)
+
+## 📂 Estrutura do Projeto
+
+```text
+task-manager
+│
+├── src
+│   ├── app
+│   │   ├── components
+│   │   ├── models
+│   │   ├── pages
+│   │   ├── services
+│   │   └── environments
+│   │
+│   ├── assets
+│   └── styles.css
+│
+├── package.json
+├── angular.json
+└── README.md
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 📡 API
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+A API foi desenvolvida utilizando **FastAPI**.
 
-```bash
-ng generate component component-name
+Documentação interativa:
+
+```
+https://task-api-1-053k.onrender.com/docs
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Principais endpoints:
 
-```bash
-ng generate --help
-```
+| Método | Endpoint | Descrição |
+|---------|----------|-----------|
+| GET | /tasks | Lista todas as tarefas |
+| GET | /tasks/{id} | Busca uma tarefa |
+| POST | /tasks | Cria uma tarefa |
+| PUT | /tasks/{id} | Atualiza uma tarefa |
+| DELETE | /tasks/{id} | Remove uma tarefa |
 
-## Building
+---
 
-To build the project run:
+## 💡 Aprendizados
 
-```bash
-ng build
-```
+Durante o desenvolvimento deste projeto, foram aplicados conceitos como:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- Componentização com Angular
+- Standalone Components
+- Comunicação entre componentes
+- Consumo de API REST
+- Reactive Forms
+- Angular Material
+- Serviços e Injeção de Dependência
+- Observables (RxJS)
+- CRUD completo
+- Deploy de aplicações Angular
+- Deploy de APIs FastAPI
+- Configuração de CORS
+- Integração Front-end + Back-end
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+👨‍💻 Autor: Jairo Andrade
 
-```bash
-ng test
-```
+🔗 LinkedIn: https://www.linkedin.com/in/jairo-andrade-642724269
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+🔗 GitHub: https://github.com/Jairocpdev/task-api
