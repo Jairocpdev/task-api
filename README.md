@@ -16,8 +16,9 @@ Projeto Full-Stack completo com separação de responsabilidades: API robusta em
 
 ### 🛠️ Tech Stack
 
-**Back-End (Raiz `/`):** FastAPI, SQLAlchemy, PostgreSQL, Docker, Uvicorn
-**Front-End (`/task-manager`):** Angular 19, TypeScript, Reactive Forms, Angular Material
+Stack: FastAPI, PostgreSQL, Docker, SQLAlchemy | Live: Render + Vercel | CI com PR & Code Review
+
+
 
 ### 🐳 Como rodar com Docker (Recomendado)
 
