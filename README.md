@@ -1,13 +1,27 @@
-# Meu Projeto FullStack
+# Task Manager - FullStack Project
 
-Tenho 2 projetos aqui dentro:
+![Docker](https://img.shields.io/badge/Docker-Ready-blue?logo=docker)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+![FastAPI](https://img.shields.io/badge/Back--End-FastAPI-009688?logo=fastapi)
+![Angular](https://img.shields.io/badge/Front--End-Angular%2019-DD0031?logo=angular)
 
-1.  Task API (Back-End): está aqui na raiz mesmo. Feita com FastAPI e PostgreSQL
-   
-    Link: https://task-api-1-053k.onrender.com/docs
+Projeto Full-Stack completo com separação de responsabilidades: API robusta em Python e SPA moderna em Angular.
 
-2. Task Manager (Front-End): está dentro da pasta chamada task-manager. Feito com Angular 19
-   
-    Link: https://task-manager-eosin-ten-31.vercel.app
+### 🚀 Live Demo
 
-Para ver detalhes dele, clica na pasta task-manager.
+| Serviço | Link | Status |
+|---|---|---|
+| **API Docs (Swagger)** | [https://task-api-1-053k.onrender.com/docs](https://task-api-1-053k.onrender.com/docs) | 🟢 Online |
+| **Front-End** | [https://task-manager-eosin-ten-31.vercel.app](https://task-manager-eosin-ten-31.vercel.app) | 🟢 Online |
+
+### 🛠️ Tech Stack
+
+**Back-End (Raiz `/`):** FastAPI, SQLAlchemy, PostgreSQL, Docker, Uvicorn
+**Front-End (`/task-manager`):** Angular 19, TypeScript, Reactive Forms, Angular Material
+
+### 🐳 Como rodar com Docker (Recomendado)
+
+O projeto inteiro sobe com 1 comando:
+
+```bash
+docker-compose up --build
