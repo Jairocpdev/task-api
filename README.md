@@ -1,5 +1,6 @@
 # Task Manager - FullStack Project
 
+![CI](https://github.com/Jairocpdev/task-api/actions/workflows/ci.yml/badge.svg)
 ![Docker](https://img.shields.io/badge/Docker-Ready-blue?logo=docker)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 ![FastAPI](https://img.shields.io/badge/Back--End-FastAPI-009688?logo=fastapi)
