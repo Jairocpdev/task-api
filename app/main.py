@@ -19,7 +19,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:4200",
-        "https://task-manager-eosin-ten-31.vercel.app"
+        "https://task-manager-eosin-ten-31.vercel.app",
+        "http://localhost:3000",
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -28,12 +29,6 @@ app.add_middleware(
 
 app.include_router(router)
 
-@app.get(
-    "/",
-    tags=["Sistema"],
-    summary="Página inicial"
-)
+@app.get("/", tags=["Sistema"], summary="Página inicial")
 def home():
-    return {
-        "mensagem": "Bem-vindo à Task API!"
-    }
+    return {"mensagem": "Bem-vindo à Task API!"}
