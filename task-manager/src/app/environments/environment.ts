@@ -1,3 +1,3 @@
 export const environment = {
-    apiUrl:'https://task-api-1-053k.onrender.com'
+    apiUrl:'https://task-api-yxf1.onrender.com/docs'
 };
