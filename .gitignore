@@ -19,3 +19,7 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
+".neon" 
+"skills-lock.json" 
+".agents/" 
+".env" 
