@@ -1,29 +1,30 @@
-# Task Manager - FullStack Project
+# 📋 Task Manager - FullStack Project
 
-[![CI](https://github.com/Jairocpdev/task-api/actions/workflows/ci.yml/badge.svg)](https://github.com/Jairocpdev/task-api/actions/workflows/ci.yml)
-![Docker](https://img.shields.io/badge/Docker-Ready-blue?logo=docker)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
-![FastAPI](https://img.shields.io/badge/Back--End-FastAPI-009688?logo=fastapi)
-![Angular](https://img.shields.io/badge/Front--End-Angular%2019-DD0031?logo=angular)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white) 
+![Angular](https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
 
 Projeto Full-Stack completo com separação de responsabilidades: API robusta em Python e SPA moderna em Angular.
 
 ### 🚀 Live Demo
 
-| Serviço | Link | Status |
-|---|---|---|
-| **API Docs (Swagger)** | [https://task-api-1-053k.onrender.com/docs](https://task-api-1-053k.onrender.com/docs) | 🟢 Online |
-| **Front-End** | [https://task-manager-eosin-ten-31.vercel.app](https://task-manager-eosin-ten-31.vercel.app) | 🟢 Online |
+**Front-End:** https://task-manager-eosin-ten-31.vercel.app/  
+**Back-End / Swagger:** https://task-api-yxf1.onrender.com/docs
 
-### 🛠️ Tech Stack
+### 🛠 Tech Stack
+Backend: FastAPI, PostgreSQL, SQLAlchemy, Pydantic
+Frontend: Angular 17, TypeScript, RxJS
+DevOps: Docker, Render, Vercel, CI/CD via Git
 
-Stack: FastAPI, PostgreSQL, Docker, SQLAlchemy | Live: Render + Vercel | CI com PR & Code Review
+### ✨ O que foi implementado
+- CRUD completo (Create, Read, Update, Delete)
+- Filtros Total / Concluídas / Pendentes
+- Busca em tempo real
+- Tratamento de estado vazio
+- Documentação automática com Swagger
+- Deploy em produção com CORS configurado
 
-
-
-### 🐳 Como rodar com Docker (Recomendado)
-
-O projeto inteiro sobe com 1 comando:
-
+### 🐳 Rodar com Docker
 ```bash
 docker-compose up --build
