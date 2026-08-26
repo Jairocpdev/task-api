@@ -14,7 +14,9 @@ Projeto Full-Stack completo com separação de responsabilidades: API robusta em
 
 ### 🛠 Tech Stack
 Backend: FastAPI, PostgreSQL, SQLAlchemy, Pydantic
+
 Frontend: Angular 17, TypeScript, RxJS
+
 DevOps: Docker, Render, Vercel, CI/CD via Git
 
 ### ✨ O que foi implementado
