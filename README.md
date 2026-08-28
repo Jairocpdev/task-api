@@ -30,3 +30,6 @@ DevOps: Docker, Render, Vercel, CI/CD via Git
 ### 🐳 Rodar com Docker
 ```bash
 docker-compose up --build
+
+## Diário - 28/08/2026
+- Estudando injeção de dependência no FastAPI
