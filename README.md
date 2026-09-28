@@ -26,3 +26,4 @@ DevOps: Docker, Render, Vercel, CI/CD via Git
 - Tratamento de estado vazio
 - Documentação automática com Swagger
 - Deploy em produção com CORS configurado
+# pair test
